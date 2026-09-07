@@ -1,0 +1,50 @@
+{
+  "name": "front-rozatolhossein",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3002",
+    "build": "next build",
+    "start": "next start -p 3000",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "@fancyapps/ui": "^6.1.6",
+    "@heroui/react": "^2.8.5",
+    "@heroui/theme": "^2.4.23",
+    "@hookform/resolvers": "^5.2.2",
+    "@radix-ui/react-popover": "^1.1.15",
+    "@react-spring/web": "^10.0.3",
+    "@react-types/shared": "^3.32.1",
+    "@types/video.js": "^7.3.58",
+    "@vidstack/react": "^1.12.13",
+    "clsx": "^2.1.1",
+    "framer-motion": "^12.23.24",
+    "motion": "^12.34.3",
+    "next": "^16.0.7",
+    "next-themes": "^0.4.6",
+    "peaks.js": "^4.0.0",
+    "react": "^19.2.1",
+    "react-date-object": "^2.1.9",
+    "react-dom": "^19.2.1",
+    "react-hook-form": "^7.67.0",
+    "react-multi-date-picker": "^4.5.2",
+    "react-player": "^3.4.0",
+    "screenfull": "^6.0.2",
+    "swiper": "^12.0.3",
+    "vazirmatn": "^33.0.3",
+    "wavesurfer.js": "^7.12.1",
+    "zod": "^4.1.13"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "^16.0.7",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  },
+  "packageManager": "pnpm@10.22.0+sha512.bf049efe995b28f527fd2b41ae0474ce29186f7edcb3bf545087bd61fbbebb2bf75362d1307fda09c2d288e1e499787ac12d4fcb617a974718a6051f2eee741c"
+}

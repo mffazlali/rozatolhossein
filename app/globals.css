@@ -1,0 +1,275 @@
+@import "tailwindcss";
+@import "../node_modules/vazirmatn/Vazirmatn-font-face.css";
+
+/**
+ * Tailwind 4 Theme Configuration
+ * تعریف رنگ‌های سفارشی پروژه با @theme
+ * 
+ * استفاده:
+ * - bg-dark-primary-teal
+ * - text-dark-primary-teal
+ * - border-dark-primary-teal
+ * - hover:bg-dark-primary-teal/80 (با opacity)
+ */
+@theme {
+  /* ========================================
+   * DARK THEME COLORS
+   * ======================================== */
+  
+  /* Primary Dark Colors - روضة الحسین */
+  --color-dark-primary-teal: #129197;
+  --color-dark-primary-gold: #bf9c5c;
+  --color-dark-primary-red: #991010;
+
+  /* Background Colors - مطابق طرح Figma */
+  --color-dark-black: #181818; 
+  --color-dark-gray-dark: #121212; 
+  --color-dark-gray: #7d7d7d;
+  --color-dark-gray-medium: #8d8d8d;
+  --color-dark-gray-light: #e7e7e7;
+  --color-dark-white: #ffffff;
+  --color-dark-black: #181818;
+
+  /* Border Colors */
+  --color-dark-border-light: rgba(223, 221, 255, 0.1);
+
+  /* Audio Player Colors - طبق طرح فیگما */
+  --color-dark-player-bg: #181818;
+  --color-dark-player-border: rgba(223, 221, 255, 0.1);
+  --color-dark-player-muted: #7d7d7d;
+  --color-dark-player-progress: #121212;
+
+  /* ========================================
+   * LIGHT THEME COLORS
+   * ======================================== */
+  
+  /* Primary Light Colors - روضة الحسین */
+  --color-light-primary-teal: #0fa8b0;
+  --color-light-primary-gold: #d4a84a;
+  --color-light-primary-red: #c41414;
+
+  /* Background Colors - Light Theme */
+  --color-light-black: #ffffff;
+  --color-light-gray-dark: #f5f5f5;
+  --color-light-gray: #272626;
+  --color-light-gray-medium: #5a5a5a;
+  --color-light-gray-light: #2d2d2d;
+  --color-light-white: #1a1a1a;
+
+  /* Border Colors */
+  --color-light-border-light: rgba(0, 0, 0, 0.1);
+
+  /* Audio Player Colors - Light Theme */
+  --color-light-player-bg: #ffffff;
+  --color-light-player-border: rgba(0, 0, 0, 0.1);
+  --color-light-player-muted: #6b6b6b;
+  --color-light-player-progress: #e8e8e8;
+
+  /* ========================================
+   * ADDITIONAL COLORS (Dark)
+   * ======================================== */
+  --color-dark-secondary-blue: #3b82f6;
+  --color-dark-secondary-blue-hover: #2563eb;
+  --color-dark-athens-gray: #e5e7eb;
+
+  /* ========================================
+   * ADDITIONAL COLORS (Light)
+   * ======================================== */
+  --color-light-secondary-blue: #2563eb;
+  --color-light-secondary-blue-hover: #1d4ed8;
+  --color-light-athens-gray: #374151;
+
+  /* ========================================
+   * THEME-AWARE COLORS
+   * These switch automatically based on .dark or .light class
+   * ======================================== */
+  --color-theme-primary-teal: var(--color-dark-primary-teal);
+  --color-theme-primary-gold: var(--color-dark-primary-gold);
+  --color-theme-primary-red: var(--color-dark-primary-red);
+  --color-theme-black: var(--color-dark-black);
+  --color-theme-gray-dark: var(--color-dark-gray-dark);
+  --color-theme-gray: var(--color-dark-gray);
+  --color-theme-gray-medium: var(--color-dark-gray-medium);
+  --color-theme-gray-light: var(--color-dark-gray-light);
+  --color-theme-white: var(--color-dark-white);
+  --color-theme-border: var(--color-dark-border-light);
+  --color-theme-player-bg: var(--color-dark-player-bg);
+  --color-theme-player-border: var(--color-dark-player-border);
+  --color-theme-player-muted: var(--color-dark-player-muted);
+  --color-theme-player-progress: var(--color-dark-player-progress);
+  --color-theme-secondary-blue: var(--color-dark-secondary-blue);
+  --color-theme-secondary-blue-hover: var(--color-dark-secondary-blue-hover);
+  --color-theme-athens-gray: var(--color-dark-athens-gray);
+
+  /* ========================================
+   * UI COLORS (Shared)
+   * ======================================== */
+  --color-ui-scrollbar-track: #f1f1f1;
+  --color-ui-scrollbar-thumb: #c1c1c1;
+  --color-ui-scrollbar-thumb-hover: #a8a8a8;
+
+}
+
+/**
+ * Line Clamp Utilities
+ * برای محدود کردن تعداد خطوط متن
+ */
+
+:root {
+  @apply font-vazirmatn font-sans;
+  direction: rtl;
+  text-align: right;
+}
+
+/* Smooth Scroll Behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+div,
+a,
+p {
+  @apply font-vazirmatn font-sans;
+  direction: rtl;
+}
+
+a, button{
+  @apply cursor-pointer;
+}
+
+/* Remove outline from buttons and links */
+button,
+a,
+[role='button'] {
+  @apply outline-none focus:outline-none focus-visible:outline-none;
+}
+
+/* Cursor pointer for enabled buttons and links */
+button:not(:disabled),
+a,
+[role='button']:not([aria-disabled='true']) {
+  @apply cursor-pointer;
+}
+
+
+@config "../tailwind.config.js";
+
+/* ========================================
+ * LIGHT THEME OVERRIDES
+ * When .light class is on html element, switch to light colors
+ * ======================================== */
+.light {
+  --color-theme-primary-teal: var(--color-light-primary-teal);
+  --color-theme-primary-gold: var(--color-light-primary-gold);
+  --color-theme-primary-red: var(--color-light-primary-red);
+  --color-theme-black: var(--color-light-black);
+  --color-theme-gray-dark: var(--color-light-gray-dark);
+  --color-theme-gray: var(--color-light-gray);
+  --color-theme-gray-medium: var(--color-light-gray-medium);
+  --color-theme-gray-light: var(--color-light-gray-light);
+  --color-theme-white: var(--color-light-white);
+  --color-theme-border: var(--color-light-border-light);
+  --color-theme-player-bg: var(--color-light-player-bg);
+  --color-theme-player-border: var(--color-light-player-border);
+  --color-theme-player-muted: var(--color-light-player-muted);
+  --color-theme-player-progress: var(--color-light-player-progress);
+  --color-theme-secondary-blue: var(--color-light-secondary-blue);
+  --color-theme-secondary-blue-hover: var(--color-light-secondary-blue-hover);
+  --color-theme-athens-gray: var(--color-light-athens-gray);
+}
+
+/* Custom Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-ui-scrollbar-track);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-ui-scrollbar-thumb);
+  border-radius: 10px;
+  transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-ui-scrollbar-thumb-hover);
+}
+
+/* Firefox Scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-ui-scrollbar-thumb) var(--color-ui-scrollbar-track);
+}
+
+
+/* Video.js RTL Support - Force LTR for video controls */
+.video-js,
+.video-js *,
+.video-js .vjs-control-bar,
+.video-js .vjs-progress-control,
+.video-js .vjs-progress-holder,
+.video-js .vjs-play-progress,
+.video-js .vjs-load-progress,
+.video-js .vjs-slider,
+.video-js .vjs-volume-control,
+.video-js .vjs-time-tooltip {
+  direction: ltr !important;
+}
+
+.fancybox__viewport{
+@apply sm:p-7!;
+}
+
+.fancybox__container .is-selected{
+@apply sm:justify-center sm:items-center;
+}
+
+.fancybox__thumbs{
+@apply hidden;
+}
+
+
+/* ========================================
+ * STORY ANIMATIONS
+ * انیمیشن‌های مخصوص استوری
+ * ======================================== */
+
+@keyframes floatEmoji {
+  0%, 100% { 
+    transform: translateY(0px) rotate(-3deg); 
+  }
+  50% { 
+    transform: translateY(-12px) rotate(3deg); 
+  }
+}
+
+/* Hide scrollbar but keep functionality */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* RTL Direction utility */
+.direction-rtl {
+  direction: rtl;
+  text-align: right;
+}
